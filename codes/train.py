@@ -55,7 +55,7 @@ gt_root = '/root/cod/datasets/COD10K-v3/Train/GT_Object/'
 image_root_te = '/root/cod/datasets/COD10K-v3/Test/Image/'
 gt_root_te = '/root/cod/datasets/COD10K-v3/Test/GT_Object/'
 
-save_path = 'checkpoints/'
+save_path = 'checkpoints2/'
 if not os.path.exists(save_path):
     os.makedirs(save_path)
 
