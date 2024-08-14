@@ -50,10 +50,10 @@ PUA_params = PUA.parameters()
 PUA_optimizer = torch.optim.Adam(PUA_params, opt.lr_pua)
 
 # set path
-image_root = '/home/yzhang1/PythonProjects/COD_dataset/PARTIAL/TrainDataset/Imgs/'
-gt_root = '/home/yzhang1/PythonProjects/COD_dataset/PARTIAL/TrainDataset/GT/'
-image_root_te = '/home/yzhang1/PythonProjects/COD_dataset/PARTIAL/Test_in_train/Imgs/'
-gt_root_te = '/home/yzhang1/PythonProjects/COD_dataset/PARTIAL/Test_in_train/GT/'
+image_root = '/root/cod/datasets/COD10K-v3/Train/Image/'
+gt_root = '/root/cod/datasets/COD10K-v3/Train/GT_Object/'
+image_root_te = '/root/cod/datasets/COD10K-v3/Test/Image/'
+gt_root_te = '/root/cod/datasets/COD10K-v3/Test/GT_Object/'
 
 save_path = 'checkpoints/'
 if not os.path.exists(save_path):
