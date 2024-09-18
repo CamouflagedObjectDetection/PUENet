@@ -25,7 +25,7 @@ parser.add_argument('--lr_bcvae', type=float, default=2.5e-5, help='learning rat
 parser.add_argument('--lr_pua', type=float, default=1e-5, help='learning rate')
 parser.add_argument('--decay_rate', type=float, default=0.1, help='decay rate of learning rate')
 parser.add_argument('--decay_epoch', type=int, default=40, help='every n epochs decay learning rate')
-parser.add_argument('--batchsize', type=int, default=7, help='training batch size')
+parser.add_argument('--batchsize', type=int, default=8, help='training batch size')
 parser.add_argument('--trainsize', type=int, default=512, help='training dataset size')
 parser.add_argument('--latent_dim', type=int, default=8, help='latent dimension')
 parser.add_argument('--forward_iter', type=int, default=5, help='number of iterations of BCVAE forward')
@@ -50,12 +50,12 @@ PUA_params = PUA.parameters()
 PUA_optimizer = torch.optim.Adam(PUA_params, opt.lr_pua)
 
 # set path
-image_root = '/root/cod/datasets/COD10K-v3/Train/Image/'
-gt_root = '/root/cod/datasets/COD10K-v3/Train/GT_Object/'
-image_root_te = '/root/cod/datasets/COD10K-v3/Test/Image/'
-gt_root_te = '/root/cod/datasets/COD10K-v3/Test/GT_Object/'
+image_root = '/home/amin_chini/cod/datasets/MHCD_COD10K/train/images/'
+gt_root = '/home/amin_chini/cod/datasets/MHCD_COD10K/train/GT/'
+image_root_te = '/home/amin_chini/cod/datasets/MHCD_COD10K/test/images/'
+gt_root_te = '/home/amin_chini/cod/datasets/MHCD_COD10K/test/GT/'
 
-save_path = 'checkpoints2/'
+save_path = 'MHCD_COD10K-ckpt/'
 if not os.path.exists(save_path):
     os.makedirs(save_path)
 

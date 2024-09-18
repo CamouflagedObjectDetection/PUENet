@@ -14,8 +14,8 @@ import torch
 class SalObjDataset(data.Dataset):
     def __init__(self, image_root, gt_root, trainsize):
         self.trainsize = trainsize
-        self.images = [image_root + f for f in os.listdir(image_root) if f.endswith('.jpg') and '-CAM-' in f]
-        self.gts = [gt_root + f for f in os.listdir(gt_root) if (f.endswith('.jpg') or f.endswith('.png')) and '-CAM-' in f]
+        self.images = [image_root + f for f in os.listdir(image_root) if (f.endswith('.jpg') or f.endswith('.png'))]
+        self.gts = [gt_root + f for f in os.listdir(gt_root) if (f.endswith('.jpg') or f.endswith('.png'))]
         self.images = sorted(self.images)
         self.gts = sorted(self.gts)
         self.filter_files()
@@ -95,7 +95,7 @@ def get_loader(image_root, gt_root, batchsize, trainsize, shuffle=True, num_work
 class test_dataset:
     def __init__(self, image_root, testsize):
         self.testsize = testsize
-        self.images = [image_root + f for f in os.listdir(image_root) if (f.endswith('.jpg') or f.endswith('.png')) and '-CAM-' in f]
+        self.images = [image_root + f for f in os.listdir(image_root) if (f.endswith('.jpg') or f.endswith('.png'))]
         self.images = sorted(self.images)
         self.transform = transforms.Compose([
             transforms.Resize((self.testsize, self.testsize)),
@@ -137,8 +137,8 @@ class test_dataset:
 class test_in_train:
     def __init__(self, image_root, gt_root, testsize):
         self.testsize = testsize
-        self.images = [image_root + f for f in os.listdir(image_root) if f.endswith('.jpg') and '-CAM-' in f]
-        self.gts = [gt_root + f for f in os.listdir(gt_root) if (f.endswith('.jpg') or f.endswith('.png')) and '-CAM-' in f]
+        self.images = [image_root + f for f in os.listdir(image_root) if (f.endswith('.jpg') or f.endswith('.png'))]
+        self.gts = [gt_root + f for f in os.listdir(gt_root) if (f.endswith('.jpg') or f.endswith('.png'))]
         self.images = sorted(self.images)
         self.gts = sorted(self.gts)
         self.transform = transforms.Compose([
